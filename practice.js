@@ -8,6 +8,12 @@
 
   //Code here
 
+var me  = {
+  name: 'Aja',
+  age: '24',
+
+};
+// alert(me.name);
 
 
 
@@ -20,7 +26,14 @@
 
 //Make a 'favoriteThings' object that contains the following keys: band, food, person, book, movie, holiday. Have the values to those keys be your favorite thing in that category.
 
-  //Code here
+var favoriteThings = {
+  band:'Zac Brown Band',
+  food:'mexican',
+  person: 'me',
+  book: 'The Death of Me',
+  movie: 'Limitless',
+  holiday: 'Christmas'
+}  //Code here
 
 
 
@@ -30,54 +43,58 @@
 
 //After you've made your object, add another key named 'car' with the value being your favorite car and then another key named 'brand' with the value being your favorite brand.
 
-  //Code here
-
+  favoriteThings.car = 'mercedes';
+  favoriteThings['brand'] = 'chanel' //another way to write this
+  console.log(favoriteThings);
 
 
 
 
 //Now change the value of the food key in your favoriteThings object to be 'Chicken Nuggets' and change the value of the book key in your favoriteThings object to be 'Harry Potter'.
 
-  //Code here
-
-
-
+  favoriteThings.food = 'Chicken Nuggets';
+  favoriteThings.book = 'Harry Potter';//Code here
 
 
 //NEXT PROBLEM
 
 
 
-/* 
+/*
 Create an empty Object called backPack. Now, create a variable called 'item'
 and set it equal to the string 'firstPocket'. Using bracket notation,
 add a 'firstPocket' key (or property) to backPack, using 'item'.
 Set the value of that key to 'chapstick'.
 
 Using dot notation, add another key (or property) to your backPack object
-that is named color, with the value being the color of your backpack. 
+that is named color, with the value being the color of your backpack.
 */
 
-  //Code here
+var backPack = {};
+var item = 'firstPocket';
+
+backPack[item] = 'chapstick';
+
+backPack.color = 'blue';//Code here
 
 
-
+console.log(backPack);
 
 
 
 //After you do the above, alert your entire backPack object.
 
-  //Code here
+// alert(backPack);  //Code here
 
- 
+
 
 /*
 You probably noticed that it just alerted [object Object].
 Alerting to see the data in your Object doesn't work so well.
-Instead, console.log your whole backPack object and then check out the console. 
+Instead, console.log your whole backPack object and then check out the console.
 */
 
-  //Code here
+console.log(backPack);  //Code here
 
 
 
@@ -99,7 +116,8 @@ var user2 = {
 //Let's say I, the user, decided to change my name and email address to the following
 // name -> 'Tyler S. McGinnis', email -> 'tyler.mcginnis@devmounta.in'. Make that change.
 
-  //Code Here
+user2.name = 'Tyler S. McGinnis';
+user2.email = 'tyler.mcginnis@devmounta.in';//Code Here
 
 
 
@@ -121,7 +139,7 @@ var user2 = {
 
 //Create an empty object called methodCollection.
 
-  //Code Here
+var methodCollection = {};  //Code Here
 
 
 
@@ -129,10 +147,16 @@ var user2 = {
 /*
 Now add two methods (functions that are properties on objects) to your methodCollection
 object. One called 'alertHello' which alerts 'hello' and another method called logHello
- which logs 'hello' to the console. 
+ which logs 'hello' to the console.
  */
 
-  //Code Here
+methodCollection.alertHello = function (){
+alert('hello');
+};
+
+methodCollection.logHello = function (){
+  console.log('hello');
+}
 
 
 
@@ -140,7 +164,8 @@ object. One called 'alertHello' which alerts 'hello' and another method called l
 
 //Now call your alertHello and logHello methods.
 
-  //Code Here
+  methodCollection.alertHello();
+  methodCollection.logHello();//Code Here
 
 
 
@@ -156,13 +181,22 @@ object. One called 'alertHello' which alerts 'hello' and another method called l
 // Create a function called makePerson which takes in name, birthday, ssn as its
 // parameters and returns a new object with all of the information that you passed in.
 
-  //Code Here
+  function makePerson(name, birthday, ssn){
+      var person = {};
+      person.name = name;
+      person.birthday = birthday;
+      person.ssn = ssn;
+
+      return person;
+
+
+  }//Code Here
 
 
 
 
 
-  
+
 
 
 //NEXT PROBLEM
@@ -171,6 +205,16 @@ object. One called 'alertHello' which alerts 'hello' and another method called l
 
 // Create a function called makeCard which takes in cardNumber, expirationDate, and securityCode to make a Credit Card object and returns that object so that whenever you invoke makeCard, you get a brand new credit card.
 
-  //Code Here
+function makeCard(cardNumber, expDate, securityCode){
+var creditCard = {
 
+  cardNumber : cardNumber,
+  expDate : expDate,
+  securityCode : securityCode
+}
 
+return creditCard;
+}
+
+makeCard(12345, "01/2020", 98766);
+//Code Here
